@@ -6,7 +6,7 @@ import { CompletionService } from '../../services/chrome';
 console.log('This is the background page');
 
 const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/completions';
-const API_KEY = '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';
+const API_KEY = 'API_KEY';
 
 const initialize = async () => {
   try {
