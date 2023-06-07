@@ -14,6 +14,7 @@ Used packages:
 - [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
 - [Prettier](https://prettier.io/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [OpenAI API](https://platform.openai.com)
 
 ## Installing and Running
 
