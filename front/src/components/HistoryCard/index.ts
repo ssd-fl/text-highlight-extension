@@ -1,2 +1,2 @@
-export { HistoryCard } from "./HistoryCard";
-export type { HistoryCardProps } from "./HistoryCard.types";
+export { HistoryCard } from './HistoryCard';
+export type { HistoryCardProps } from './HistoryCard.types';

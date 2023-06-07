@@ -6,12 +6,13 @@ import { CompletionService } from '../../services/chrome';
 console.log('This is the background page');
 
 const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/completions';
-const API_KEY = 'API_KEY';
+const API_KEY = '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';
 
 const initialize = async () => {
   try {
     await CompletionService.clearCompletion();
     const completion = await getAllCompletion();
+    console.log({ completion });
     await CompletionService.saveAllCompletion(completion);
   } catch (error) {
     console.log('initialize: error ===> ', error);

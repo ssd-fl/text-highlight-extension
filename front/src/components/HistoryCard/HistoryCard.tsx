@@ -1,7 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { Completion } from "../../@types/Summary";
-import { formatDateTime } from "../../common/helpers";
-import { HistoryCardProps } from "./HistoryCard.types";
+import { Box, Grid, Typography } from '@mui/material';
+import { Completion } from '../../@types/Summary';
+import { formatDateTime } from '../../common/helpers';
+import { HistoryCardProps } from './HistoryCard.types';
 
 const HistoryCard = ({ data }: HistoryCardProps) => {
   return (
@@ -9,14 +9,14 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
       sx={{
         width: 345,
         height: 60,
-        overflow: "hidden",
-        backgroundColor: "#404040",
+        overflow: 'hidden',
+        backgroundColor: '#404040',
         borderRadius: 1,
-        boxShadow: "rgba(0, 0, 0, 0.15) 0px 8px 8px -6px",
-        borderColor: "#404040",
-        cursor: "pointer",
-        "&:hover": {
-          backgroundColor: "#4d4d4d",
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 8px 8px -6px',
+        borderColor: '#404040',
+        cursor: 'pointer',
+        '&:hover': {
+          backgroundColor: '#4d4d4d',
           opacity: [0.9, 0.8, 0.7],
         },
       }}
@@ -28,23 +28,23 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
           <Typography
             variant="subtitle1"
             color="white"
-            textAlign={"left"}
+            textAlign={'left'}
             sx={{
               fontSize: 14,
-              textOverflow: "ellipsis",
-              overflow: "hidden",
-              whiteSpace: "nowrap",
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
             }}
             mr={1}
           >
             {data.keyword}
           </Typography>
         </Grid>
-        <Grid item xs={4} display={"flex"} alignItems={"center"}>
+        <Grid item xs={4} display={'flex'} alignItems={'center'}>
           <Typography
             variant="subtitle2"
             color="white"
-            textAlign={"right"}
+            textAlign={'right'}
             sx={{ fontSize: 12 }}
           >
             {formatDateTime(data.createdDate)}
@@ -60,6 +60,6 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
   );
 };
 
-HistoryCard.displayName = "HistoryCard";
+HistoryCard.displayName = 'HistoryCard';
 
 export { HistoryCard };

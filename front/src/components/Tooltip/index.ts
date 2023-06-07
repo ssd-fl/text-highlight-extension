@@ -1,2 +1,2 @@
-export { CustomTooltip } from "./Tooltip";
-export type { TooltipProps } from "./Tooltip.types";
+export { CustomTooltip } from './Tooltip';
+export type { TooltipProps } from './Tooltip.types';

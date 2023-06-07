@@ -1,5 +1,5 @@
-import { Box, Tooltip } from "@mui/material";
-import { TooltipProps } from "./Tooltip.types";
+import { Box, Tooltip } from '@mui/material';
+import { TooltipProps } from './Tooltip.types';
 
 const CustomTooltip = ({ title }: TooltipProps) => {
   return (
@@ -9,6 +9,6 @@ const CustomTooltip = ({ title }: TooltipProps) => {
   );
 };
 
-CustomTooltip.displayName = "CustomTooltip";
+CustomTooltip.displayName = 'CustomTooltip';
 
 export { CustomTooltip };
