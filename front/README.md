@@ -10,8 +10,6 @@ Used packages:
 - [React 18](https://reactjs.org)
 - [Webpack 5](https://webpack.js.org/)
 - [Webpack Dev Server 4](https://webpack.js.org/configuration/dev-server/)
-- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
-- [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
 - [Prettier](https://prettier.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [OpenAI API](https://platform.openai.com)
