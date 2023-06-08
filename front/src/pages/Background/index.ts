@@ -8,13 +8,12 @@ console.log('This is the background page');
 const OPENAI_API_ENDPOINT =
   process.env.REACT_APP_OPENAI_ENDPOINT ??
   'https://api.openai.com/v1/completions';
-const API_KEY = process.env.REACT_APP_OPENAI_API;
+const API_KEY = process.env.REACT_APP_OPENAI_KEY;
 
 const initialize = async () => {
   try {
     await CompletionService.clearCompletion();
     const completion = await getAllCompletion();
-    console.log({ completion });
     await CompletionService.saveAllCompletion(completion);
   } catch (error) {
     console.log('initialize: error ===> ', error);
@@ -71,12 +70,14 @@ const catchEventListener = async (
 
     if (!newCompletion) return;
 
-    await CompletionService.saveOneCompletion(
-      newCompletion.keyword,
-      newCompletion.text
-    );
+    const createdCompletion = await createCompletion(newCompletion);
 
-    await createCompletion(newCompletion);
+    if (!createdCompletion) return;
+
+    await CompletionService.saveOneCompletion(
+      createdCompletion.keyword,
+      JSON.stringify(createdCompletion)
+    );
 
     sendMessageToContent(newCompletion.text);
   } catch (error) {

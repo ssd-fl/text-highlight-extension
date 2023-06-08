@@ -20,7 +20,6 @@ const Popup = (): JSX.Element => {
   useEffect(() => {
     const getHistory = async () => {
       const history = await CompletionService.getCompletion();
-      console.log(history);
       const com = Object.values(history).map((v) => JSON.parse(v));
       setCompletions(com);
     };

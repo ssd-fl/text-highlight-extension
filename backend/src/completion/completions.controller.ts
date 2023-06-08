@@ -8,8 +8,13 @@ export class CompletionsController {
   constructor(private readonly completionsService: CompletionsService) {}
 
   @Post()
-  async create(@Body() createCompletionDto: CreateCompletionDto) {
-    await this.completionsService.create(createCompletionDto);
+  async create(
+    @Body() createCompletionDto: CreateCompletionDto,
+  ): Promise<Completion> {
+    const createdCompletion = await this.completionsService.create(
+      createCompletionDto,
+    );
+    return createdCompletion;
   }
 
   @Get()

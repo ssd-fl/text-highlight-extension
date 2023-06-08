@@ -5,6 +5,7 @@ const webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
@@ -66,12 +67,15 @@ let options = {
     ],
   },
   resolve: {
-    // alias: alias,
+    alias: {
+      process: 'process/browser',
+    },
     extensions: fileExtensions
       .map((extension) => '.' + extension)
       .concat(['.js', '.jsx', '.ts', '.tsx', '.css']),
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin({ verbose: false }),
     new webpack.ProgressPlugin(),
     new webpack.EnvironmentPlugin(['NODE_ENV']),

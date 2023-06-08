@@ -47,7 +47,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     showPopupCard(msg.content, container);
   } else if (msg.type === 'update-enable') {
-    console.log('updateEnableOption', msg.content);
     enableFeature = msg.content;
   }
 });
@@ -82,16 +81,6 @@ window.onmousedown = function (event) {
     }
   }
 };
-
-const body = document.querySelector('body');
-
-const app = document.createElement('div');
-
-app.id = 'root';
-
-if (body) {
-  body.prepend(app);
-}
 
 const showPopupCard = async (msg: any, MyBox: any) => {
   const root = createRoot(container!);

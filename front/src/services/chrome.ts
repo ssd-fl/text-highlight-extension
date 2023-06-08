@@ -4,7 +4,7 @@ const KEY = 'completion';
 const ENABLE_FEATURE = 'completion_enable';
 
 export class CompletionService {
-  static getCompletion = (): Promise<{ [key: string]: string }> => {
+  static getCompletion = async (): Promise<{ [key: string]: string }> => {
     return new Promise((resolve, reject) => {
       chrome.storage.local.get([KEY], (result) => {
         if (chrome.runtime.lastError) reject(chrome.runtime.lastError);
@@ -28,6 +28,7 @@ export class CompletionService {
   };
 
   static saveAllCompletion = async (data: Completion[]) => {
+    console.log('saveAllCompletion', data);
     if (data.length === 0) return;
 
     const completion = data.reduce((sum: any, current: Completion) => {
@@ -43,7 +44,7 @@ export class CompletionService {
     });
   };
 
-  static clearCompletion = () => {
+  static clearCompletion = async () => {
     return new Promise((resolve, reject) => {
       chrome.storage.local.remove([KEY], () => {
         if (chrome.runtime.lastError) reject(chrome.runtime.lastError);
