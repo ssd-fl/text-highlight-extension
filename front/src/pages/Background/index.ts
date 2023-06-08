@@ -1,5 +1,5 @@
 import { DOMMessage } from '../../@types/DOMMessage';
-import { convertDataToCompletion } from '../../common/helpers';
+import { convertDataToCompletion, extractKeywords } from '../../common/helpers';
 import { createCompletion, getAllCompletion } from '../../services/api';
 import { CompletionService } from '../../services/chrome';
 
@@ -66,7 +66,9 @@ const catchEventListener = async (
     });
     const result = await response.json();
 
-    const newCompletion = convertDataToCompletion(msg.text, result);
+    const tags = extractKeywords(result.choices[0].text);
+
+    const newCompletion = convertDataToCompletion(msg.text, result, tags);
 
     if (!newCompletion) return;
 

@@ -14,6 +14,9 @@ export class Completion {
   @Prop({ required: true })
   text: string;
 
+  @Prop({ required: true })
+  tags: string[];
+
   @Prop({ required: true, default: Date.now() })
   createdDate: Date;
 }

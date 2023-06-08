@@ -8,6 +8,7 @@ const mockCompletion = {
   keyword: 'Keyword1',
   model: 'Model1',
   text: 'text1',
+  tags: ['tag1'],
   createdDate: new Date('2023-06-06T01:47:40.409Z'),
 };
 
@@ -18,6 +19,7 @@ const mockCompletion1 = [
     keyword: 'Keyword1',
     model: 'Model1',
     text: 'text1',
+    tags: ['tag1'],
     createdDate: new Date('2023-06-06T01:47:40.409Z'),
   },
 ] as unknown as (Document &
@@ -32,12 +34,14 @@ describe('CompletionsService', () => {
       keyword: 'Keyword1',
       model: 'Model1',
       text: 'text1',
+      tags: ['tag1'],
       createdDate: new Date('2023-06-06T01:47:40.409Z'),
     },
     {
       keyword: 'Keyword2',
       model: 'Model2',
       text: 'text2',
+      tags: ['tag1'],
       createdDate: new Date('2023-06-06T01:47:40.409Z'),
     },
   ];
@@ -81,6 +85,7 @@ describe('CompletionsService', () => {
       keyword: 'Keyword1',
       model: 'Model1',
       text: 'text1',
+      tags: ['tag1'],
       createdDate: new Date('2023-06-06T01:47:40.409Z'),
     });
     expect(newCompletion[0]).toEqual(mockCompletion);

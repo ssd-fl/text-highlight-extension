@@ -17,7 +17,7 @@ const CardList = ({ items }: CardListProps) => {
   let list = [...items];
   if (filter) {
     list = list.filter((v) =>
-      v.keyword.toLowerCase().includes(filter.toLowerCase())
+      v.tags.join(' ').toLowerCase().includes(filter.toLowerCase())
     );
   }
 

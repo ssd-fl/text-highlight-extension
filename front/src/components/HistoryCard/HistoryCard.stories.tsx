@@ -17,6 +17,7 @@ const data: Completion = {
   keyword: 'keyword',
   text: 'text',
   model: 'model',
+  tags: ['tag1'],
 };
 
 export const DefaultHistoryCard: Story = {

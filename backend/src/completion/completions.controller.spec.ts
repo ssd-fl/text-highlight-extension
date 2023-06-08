@@ -10,6 +10,7 @@ describe('Completions Controller', () => {
     keyword: 'Keyword',
     model: 'Model',
     text: 'text',
+    tags: ['tag1'],
     createdDate: new Date('2023-06-06T01:47:40.409Z'),
   };
 
@@ -17,6 +18,7 @@ describe('Completions Controller', () => {
     keyword: 'Keyword',
     model: 'Model',
     text: 'text',
+    tags: ['tag1'],
     createdDate: new Date('2023-06-06T01:47:40.409Z'),
     _id: 'a id',
   };
@@ -33,18 +35,21 @@ describe('Completions Controller', () => {
                 keyword: 'Keyword1',
                 model: 'Model1',
                 text: 'text1',
+                tags: ['tag1'],
                 createdDate: new Date('2023-06-06T01:47:40.409Z'),
               },
               {
                 keyword: 'Keyword2',
                 model: 'Model2',
                 text: 'text2',
+                tags: ['tag1'],
                 createdDate: new Date('2023-06-06T01:47:40.409Z'),
               },
               {
                 keyword: 'Keyword3',
                 model: 'Model3',
                 text: 'text3',
+                tags: ['tag1'],
                 createdDate: new Date('2023-06-06T01:47:40.409Z'),
               },
             ]),
@@ -76,18 +81,21 @@ describe('Completions Controller', () => {
           keyword: 'Keyword1',
           model: 'Model1',
           text: 'text1',
+          tags: ['tag1'],
           createdDate: new Date('2023-06-06T01:47:40.409Z'),
         },
         {
           keyword: 'Keyword2',
           model: 'Model2',
           text: 'text2',
+          tags: ['tag1'],
           createdDate: new Date('2023-06-06T01:47:40.409Z'),
         },
         {
           keyword: 'Keyword3',
           model: 'Model3',
           text: 'text3',
+          tags: ['tag1'],
           createdDate: new Date('2023-06-06T01:47:40.409Z'),
         },
       ]);

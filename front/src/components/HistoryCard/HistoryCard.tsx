@@ -1,5 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
-import { Completion } from '../../@types/Summary';
+import { Box, Grid, Tooltip, Typography } from '@mui/material';
 import { formatDateTime } from '../../common/helpers';
 import { HistoryCardProps } from './HistoryCard.types';
 
@@ -9,7 +8,7 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
       sx={{
         width: 345,
         height: 60,
-        overflow: 'hidden',
+        overflow: 'scroll',
         backgroundColor: '#404040',
         borderRadius: 1,
         boxShadow: 'rgba(0, 0, 0, 0.15) 0px 8px 8px -6px',
@@ -25,20 +24,40 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
     >
       <Grid container>
         <Grid item xs={8}>
-          <Typography
-            variant="subtitle1"
-            color="white"
-            textAlign={'left'}
-            sx={{
-              fontSize: 14,
-              textOverflow: 'ellipsis',
-              overflow: 'hidden',
-              whiteSpace: 'nowrap',
-            }}
-            mr={1}
-          >
-            {data.keyword}
-          </Typography>
+          <Box>
+            <Tooltip title={data.keyword} arrow>
+              <Typography
+                color="white"
+                textAlign="left"
+                sx={{
+                  fontSize: 14,
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                }}
+                mr={1}
+              >
+                {data.keyword}
+              </Typography>
+            </Tooltip>
+          </Box>
+          <Box display={'flex'} mt={0.5}>
+            {data.tags.map((tag: string, index: number) => (
+              <Box
+                key={`${tag}-${index}`}
+                mr={1}
+                p={0.5}
+                sx={{
+                  fontSize: 10,
+                  borderRadius: 1,
+                  border: '0.1px solid white',
+                  color: 'white',
+                }}
+              >
+                #{tag}
+              </Box>
+            ))}
+          </Box>
         </Grid>
         <Grid item xs={4} display={'flex'} alignItems={'center'}>
           <Typography

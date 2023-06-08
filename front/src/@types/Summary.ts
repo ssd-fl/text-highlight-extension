@@ -23,5 +23,6 @@ export type Completion = {
   model: string;
   keyword: string;
   text: string;
+  tags: string[];
   createdDate: string;
 };

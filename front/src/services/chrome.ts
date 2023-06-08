@@ -28,7 +28,6 @@ export class CompletionService {
   };
 
   static saveAllCompletion = async (data: Completion[]) => {
-    console.log('saveAllCompletion', data);
     if (data.length === 0) return;
 
     const completion = data.reduce((sum: any, current: Completion) => {

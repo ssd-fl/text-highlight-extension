@@ -46,8 +46,8 @@ const ActionBar = () => {
       >
         <InputBase
           sx={{ ml: 2, flex: 1, fontSize: 14, color: 'white' }}
-          placeholder="Search Completion"
-          inputProps={{ 'aria-label': 'Search Completion' }}
+          placeholder="Search by tag"
+          inputProps={{ 'aria-label': 'Search by tag' }}
           onChange={changeFilter}
         />
         <IconButton type="button" aria-label="search">
